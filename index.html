@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanyoo — Прототип лендинга (Система экранов)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5025c7',
+                        darkBg: '#222222',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s; overflow-x: hidden; }
+        .block-content { display: none; }
+        .block-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-btn.active { background-color: #5025c7; color: white; border-color: #5025c7; box-shadow: 0 0 15px rgba(80, 37, 199, 0.4); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-darkBg dark:text-white min-h-screen flex flex-col">
+
+    <!-- --- ФИКСИРОВАННАЯ ШАПКА С НАВИГАЦИЕЙ ПО БЛОКАМ --- -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-gray-200 dark:border-white/5 px-6 py-4 bg-white/90 dark:bg-darkBg/90">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 font-black text-2xl tracking-tighter">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-xs">V</div>
+                Vanyoo
+            </div>
+            
+            <!-- Переключатели блоков (номера) -->
+            <nav class="flex items-center gap-2 md:gap-4">
+                <button onclick="showBlock(1)" id="btn-1" class="nav-btn active w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">1</button>
+                <button onclick="showBlock(2)" id="btn-2" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">2</button>
+                <button onclick="showBlock(3)" id="btn-3" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">3</button>
+                <button onclick="showBlock(4)" id="btn-4" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">4</button>
+                <div class="w-[1px] h-8 bg-gray-200 dark:bg-white/10 mx-2"></div>
+                <button onclick="showBlock(5)" id="btn-5" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-dashed border-gray-300 dark:border-white/20 rounded-xl font-bold flex items-center justify-center text-gray-400 hover:text-primary transition-all">5</button>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-4">
+                <button onclick="document.documentElement.classList.toggle('dark')" class="p-2">🌓</button>
+                <button class="bg-primary text-white px-5 py-2 rounded-xl text-sm font-bold shadow-lg shadow-primary/20">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24">
+
+        <!-- !!! БЛОК 1: HERO SECTION - УТВЕРЖДЕНО (FIXED) !!! -->
+        <section id="block-1" class="block-content active pt-12 pb-24 px-6">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h1 class="text-5xl md:text-6xl font-black leading-tight mb-8">ИИ-менеджер по продажам и поддержке для сайта и соцсетей</h1>
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-6 italic text-primary">Подключи всего за 5 минут.</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-lg"><span class="mt-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs shrink-0">✓</span><span><strong class="font-bold">Поддержка 24/7:</strong> мгновенно отвечает клиентам</span></li>
+                            <li class="flex items-start gap-3 text-lg"><span class="mt-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs shrink-0">✓</span><span><strong class="font-bold">Ведёт диалог:</strong> выявляет потребность и берёт контакт</span></li>
+                            <li class="flex items-start gap-3 text-lg"><span class="mt-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs shrink-0">✓</span><span><strong class="font-bold">Тёплые контакты:</strong> передаёт заявки напрямую менеджерам</span></li>
+                            <li class="flex items-start gap-3 text-lg"><span class="mt-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs shrink-0">✓</span><span><strong class="font-bold">Внедрение под ключ:</strong> подключим и настроим под ваш бизнес</span></li>
+                        </ul>
+                    </div>
+                    <button class="bg-primary text-white py-4 px-10 rounded-xl text-lg font-bold shadow-2xl shadow-primary/40 flex items-center gap-2 hover:scale-[1.02] transition-all">Создать ИИ-помощника за 3 минуты →</button>
+                    <p class="text-sm text-gray-500 mt-4 ml-2">Не требует программиста. Установка за 5 минут</p>
+                </div>
+                <div class="relative">
+                    <div class="w-full max-w-[400px] mx-auto bg-white dark:bg-zinc-800 rounded-[3rem] border-8 border-slate-200 dark:border-zinc-700 aspect-[9/16] overflow-hidden shadow-2xl">
+                        <div class="bg-primary/10 p-6 border-b dark:border-white/5 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">🤖</div>
+                            <div><div class="font-bold text-sm">AI-ассистент Venyoo</div><div class="text-[10px] text-green-500 font-bold">Онлайн</div></div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="bg-gray-100 dark:bg-zinc-700 p-3 rounded-2xl rounded-tl-none text-sm">Здравствуйте! Чем могу помочь?</div>
+                            <div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none text-sm ml-auto max-w-[80%]">Сколько стоит настройка?</div>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary blur-[160px] opacity-10 -z-10"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- !!! БЛОК 2: TRUST STACK - УТВЕРЖДЕНО (FIXED) !!! -->
+        <section id="block-2" class="block-content pt-32 pb-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 items-center">
+                    <div class="flex items-center justify-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100 cursor-default">
+                        <span class="text-4xl">💠</span><span class="text-2xl font-black italic">CloudFlow</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100 cursor-default">
+                        <span class="text-4xl">⚙️</span><span class="text-2xl font-black italic">EchoTech</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100 cursor-default">
+                        <span class="text-4xl">🧭</span><span class="text-2xl font-black italic">NovaSync</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100 cursor-default">
+                        <span class="text-4xl">〽️</span><span class="text-2xl font-black italic">AuraSoft</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- !!! БЛОК 3: CASE STUDY & STATS - УТВЕРЖДЕНО (FIXED) !!! -->
+        <section id="block-3" class="block-content pt-12 pb-24 px-6">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+                
+                <!-- Левая часть: Карточка кейса (NowTech) -->
+                <div class="w-full lg:w-[550px] relative group">
+                    <!-- Стрелки управления -->
+                    <button class="absolute -left-10 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition-all hidden xl:block text-2xl">❮</button>
+                    <button class="absolute -right-10 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition-all hidden xl:block text-2xl">❯</button>
+
+                    <div class="bg-white dark:bg-[#1a1a1a] p-8 md:p-12 rounded-[2.5rem] border dark:border-white/10 shadow-2xl relative overflow-hidden">
+                        <!-- Хедер карточки -->
+                        <div class="flex items-center gap-4 mb-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-[#5025c7] to-[#8a63ff] rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-primary/20">N</div>
+                            <div>
+                                <h4 class="text-2xl font-black leading-none">NowTech</h4>
+                                <p class="text-sm text-gray-400 mt-2">Онлайн-магазин электроники</p>
+                            </div>
+                        </div>
+
+                        <!-- Метрики -->
+                        <div class="grid grid-cols-3 gap-4 mb-10 border-y dark:border-white/5 py-8 text-center">
+                            <div>
+                                <div class="text-primary text-2xl md:text-3xl font-black leading-none">↓ 42%</div>
+                                <p class="text-[10px] md:text-[11px] font-bold text-gray-500 uppercase mt-3 leading-tight tracking-wider">Снизилась нагрузка на почту</p>
+                            </div>
+                            <div class="border-x dark:border-white/5 px-2">
+                                <div class="text-primary text-2xl md:text-3xl font-black leading-none">↑ 2.3x</div>
+                                <p class="text-[10px] md:text-[11px] font-bold text-gray-500 uppercase mt-3 leading-tight tracking-wider">Выросло число заявок</p>
+                            </div>
+                            <div>
+                                <div class="text-primary text-2xl md:text-3xl font-black leading-none">+3200</div>
+                                <p class="text-[10px] md:text-[11px] font-bold text-gray-500 uppercase mt-3 leading-tight tracking-wider">Пришло подписчиков</p>
+                            </div>
+                        </div>
+
+                        <!-- Флоу/Путь -->
+                        <div class="flex items-center flex-wrap gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                            <span>Подключили чат</span>
+                            <span class="text-gray-400 text-xs">→</span>
+                            <span>Автоматизировали ответы</span>
+                            <span class="text-gray-400 text-xs">→</span>
+                            <span>Увеличили конверсию</span>
+                        </div>
+
+                        <!-- Пагинация -->
+                        <div class="flex justify-center gap-2 mt-12">
+                            <div class="w-2 h-2 rounded-full bg-gray-200 dark:bg-zinc-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-primary"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-200 dark:bg-zinc-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-200 dark:bg-zinc-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-200 dark:bg-zinc-700"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая часть: Текст и Глобальные статы -->
+                <div class="flex-1">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight italic">Venyoo используют тысячи сайтов</h2>
+                    <p class="text-lg text-gray-500 dark:text-zinc-400 mb-12 max-w-lg leading-relaxed">Сервис помогает бизнесу не терять клиентов и быстрее отвечать на обращения</p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-12 mb-12">
+                        <div>
+                            <div class="text-4xl font-black text-primary mb-2">10 000 +</div>
+                            <div class="text-lg font-bold uppercase tracking-widest mb-1">Сайтов</div>
+                            <p class="text-xs text-gray-400 uppercase font-bold tracking-tighter">подключили Venyoo</p>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-black text-primary mb-2">10 000 000 +</div>
+                            <div class="text-lg font-bold uppercase tracking-widest mb-1">Заявок</div>
+                            <p class="text-xs text-gray-400 uppercase font-bold tracking-tighter">получено через чат</p>
+                        </div>
+                    </div>
+
+                    <button class="bg-primary text-white py-4 px-10 rounded-2xl text-lg font-bold shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-all">
+                        Создать ИИ-помощника за 3 минуты →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- !!! БЛОК 4: OMNICHANNEL & RETENTION - УТВЕРЖДЕНО (FIXED) !!! -->
+        <section id="block-4" class="block-content pt-12 pb-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-6xl font-black mb-6 italic leading-tight">Клиент пишет один раз — <span class="text-primary italic underline decoration-8 decoration-primary/30 underline-offset-8">остается навсегда</span></h2>
+                    <p class="text-xl text-gray-500 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">Vanyoo превращает разовые заходы на сайт в бесконечный цикл продаж. ИИ не просто отвечает на вопросы, он «заземляет» клиента в удобном мессенджере, создавая базу лояльных подписчиков.</p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Визуализация экосистемы -->
+                    <div class="relative">
+                        <div class="aspect-video bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-white/10 p-12 flex flex-col justify-center relative shadow-2xl rounded-[3rem] overflow-hidden">
+                            <div class="flex justify-between items-center mb-16 relative">
+                                <!-- Каналы -->
+                                <div class="flex -space-x-4 relative z-10">
+                                    <div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-zinc-800 border-4 border-white dark:border-[#1a1a1a] flex items-center justify-center font-black text-xs text-primary shadow-xl">TG</div>
+                                    <div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-zinc-800 border-4 border-white dark:border-[#1a1a1a] flex items-center justify-center font-black text-xs text-primary shadow-xl">VK</div>
+                                    <div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-zinc-800 border-4 border-white dark:border-[#1a1a1a] flex items-center justify-center font-black text-xs text-primary shadow-xl">MAX</div>
+                                    <div class="w-14 h-14 rounded-full bg-slate-100 dark:bg-zinc-800 border-4 border-white dark:border-[#1a1a1a] flex items-center justify-center font-black text-xs text-primary shadow-xl">WEB</div>
+                                </div>
+                                
+                                <!-- Соединение -->
+                                <div class="flex-1 h-1 bg-gradient-to-r from-primary/10 to-primary mx-6 rounded-full relative">
+                                    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-4 h-4 rounded-full bg-primary ping-slow"></div>
+                                </div>
+                                
+                                <!-- ИИ-Ядро -->
+                                <div class="w-24 h-24 rounded-[2rem] bg-primary flex items-center justify-center text-5xl shadow-2xl shadow-primary/40 relative z-20">🤖</div>
+                            </div>
+                            
+                            <!-- Статус -->
+                            <div class="bg-primary/5 p-6 rounded-2xl border border-primary/20 flex items-center gap-4">
+                                <span class="text-3xl">🔄</span>
+                                <div>
+                                    <p class="font-black text-sm uppercase text-primary tracking-widest">Связь установлена навсегда</p>
+                                    <p class="text-xs text-gray-500">История диалога и контекст сохранены во всех каналах</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Декоративное свечение -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+                        </div>
+                        
+                        <!-- Бадж выгоды -->
+                        <div class="absolute -top-6 -right-6 px-8 py-4 bg-primary text-white rounded-2xl font-black shadow-2xl rotate-2">Рост LTV в 2-3 раза</div>
+                    </div>
+
+                    <!-- Текстовые аргументы -->
+                    <div class="space-y-10">
+                        <div class="group border-l-4 border-primary/10 hover:border-primary pl-8 transition-all">
+                            <h4 class="text-2xl font-black mb-3 italic">Тотальный охват (Омниканальность)</h4>
+                            <p class="text-gray-500 dark:text-zinc-400 text-lg">Telegram, VK, MAX и ваш сайт теперь работают как единый организм. Клиент выбирает удобный канал, а вы не теряете связь ни на секунду.</p>
+                        </div>
+                        
+                        <div class="group border-l-4 border-primary/10 hover:border-primary pl-8 transition-all">
+                            <h4 class="text-2xl font-black mb-3 italic">Экосистема удержания</h4>
+                            <p class="text-gray-500 dark:text-zinc-400 text-lg">После первого касания с ИИ контакт сохраняется в CRM. Вы можете продолжать общение, делать рассылки и возвращать клиента без затрат на рекламу.</p>
+                        </div>
+                        
+                        <div class="group border-l-4 border-primary/10 hover:border-primary pl-8 transition-all">
+                            <h4 class="text-2xl font-black mb-3 italic">Превращение в вечного подписчика</h4>
+                            <p class="text-gray-500 dark:text-zinc-400 text-lg">Клиент остается внутри вашего бота, где ИИ ведет его по воронке. Это автоматически дает рост обращений и кратное увеличение прибыли бизнеса.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- !!! БЛОК 5: PLACEHOLDER !!! -->
+        <section id="block-5" class="block-content pt-32 pb-24 px-6 text-center opacity-30">
+            <h2 class="text-4xl font-black italic">Здесь будет Блок: Эффективность</h2>
+            <p class="mt-4">Разработка следующего экрана...</p>
+        </section>
+
+    </main>
+
+    <footer class="py-12 px-6 border-t dark:border-white/5 mt-auto">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 opacity-40">
+            <p class="text-xs font-bold uppercase tracking-widest">© 2024 Vanyoo. Экранный прототип для дизайнера.</p>
+            <div class="flex gap-4">
+                <span class="w-8 h-8 rounded-lg bg-gray-200 dark:bg-zinc-800 flex items-center justify-center text-[10px] font-bold">TG</span>
+                <span class="w-8 h-8 rounded-lg bg-gray-200 dark:bg-zinc-800 flex items-center justify-center text-[10px] font-bold">VK</span>
+                <span class="w-8 h-8 rounded-lg bg-gray-200 dark:bg-zinc-800 flex items-center justify-center text-[10px] font-bold">YT</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showBlock(n) {
+            // Скрыть все блоки
+            document.querySelectorAll('.block-content').forEach(b => b.classList.remove('active'));
+            // Деактивировать все кнопки
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            
+            // Показать нужный блок
+            const targetBlock = document.getElementById('block-' + n);
+            if (targetBlock) {
+                targetBlock.classList.add('active');
+            }
+            
+            // Активировать нужную кнопку
+            const targetBtn = document.getElementById('btn-' + n);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+
+            // Скролл вверх при переключении
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // По умолчанию ставим темную тему
+        if (!document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
+</html>
