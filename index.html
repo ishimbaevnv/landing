@@ -47,12 +47,11 @@
             
             <!-- Переключатели блоков (номера) -->
             <nav class="flex items-center gap-2 md:gap-4">
-                <button onclick="showBlock(1)" id="btn-1" class="nav-btn active w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">1</button>
+                <button onclick="showBlock(1)" id="btn-1" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">1</button>
                 <button onclick="showBlock(2)" id="btn-2" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">2</button>
                 <button onclick="showBlock(3)" id="btn-3" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">3</button>
                 <button onclick="showBlock(4)" id="btn-4" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">4</button>
-                <div class="w-[1px] h-8 bg-gray-200 dark:bg-white/10 mx-2"></div>
-                <button onclick="showBlock(5)" id="btn-5" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-dashed border-gray-300 dark:border-white/20 rounded-xl font-bold flex items-center justify-center text-gray-400 hover:text-primary transition-all">5</button>
+                <button onclick="showBlock(5)" id="btn-5" class="nav-btn active w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">5</button>
             </nav>
 
             <div class="hidden sm:flex items-center gap-4">
@@ -202,7 +201,7 @@
         <section id="block-4" class="block-content pt-12 pb-24 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
-                    <h2 class="text-5xl md:text-6xl font-black mb-6 italic leading-tight">Клиент пишет один раз — <span class="text-primary italic underline decoration-8 decoration-primary/30 underline-offset-8">остается навсегда</span></h2>
+                    <h2 class="text-5xl md:text-6xl font-black mb-6 italic leading-tight">Один контакт — <span class="text-primary italic underline decoration-8 decoration-primary/30 underline-offset-8">вечный клиент</span></h2>
                     <p class="text-xl text-gray-500 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">Vanyoo переводит трафик в мессенджеры. ИИ удерживает каждого лида, превращая его в лояльного подписчика вашей базы навсегда.</p>
                 </div>
                 
@@ -267,9 +266,65 @@
         </section>
 
         <!-- !!! БЛОК 5: PLACEHOLDER !!! -->
-        <section id="block-5" class="block-content pt-32 pb-24 px-6 text-center opacity-30">
-            <h2 class="text-4xl font-black italic">Здесь будет Блок: Эффективность</h2>
-            <p class="mt-4">Разработка следующего экрана...</p>
+        <section id="block-5" class="block-content active pt-12 pb-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-24">
+                    <h2 class="text-5xl md:text-6xl font-black mb-6 italic leading-tight uppercase tracking-tighter italic">Как это <span class="text-primary underline decoration-primary/30">работает</span></h2>
+                    <p class="text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Никаких сложных настроек. Весь процесс автоматизирован: от первого касания до готового лида в CRM.</p>
+                </div>
+
+                <!-- Первый этаж: Сбор и активация -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Шаг 1 -->
+                    <div class="bg-white dark:bg-[#1a1a1a] p-10 rounded-[2.5rem] border dark:border-white/5 shadow-xl hover:border-primary/40 transition-all group relative">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center font-black text-primary mb-8 text-xl group-hover:bg-primary group-hover:text-white transition-all">01</div>
+                        <h4 class="text-2xl font-black mb-4 uppercase italic leading-tight">Простая настройка</h4>
+                        <p class="text-gray-500 dark:text-zinc-400 leading-relaxed font-medium">
+                            Вставьте ссылку на сайт. ИИ изучит ваш бизнес и подготовит базу ответов за 120 секунд.<br>
+                        </p>
+                    </div>
+
+                    <!-- Шаг 2 -->
+                    <div class="bg-white dark:bg-[#1a1a1a] p-10 rounded-[2.5rem] border dark:border-white/5 shadow-xl hover:border-primary/40 transition-all group relative">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center font-black text-primary mb-8 text-xl group-hover:bg-primary group-hover:text-white transition-all">02</div>
+                        <h4 class="text-2xl font-black mb-4 uppercase italic leading-tight">Активация</h4>
+                        <p class="text-gray-500 dark:text-zinc-400 leading-relaxed font-medium">
+                            Подключите ИИ к сайту и мессенджерам без программиста и сложных настроек за 5 минут.<br>
+                        </p>
+                    </div>
+
+                    <!-- Шаг 3: Центр интеллекта -->
+                    <div class="bg-white dark:bg-[#1d1d1d] p-10 rounded-[2.5rem] border-2 border-primary shadow-2xl shadow-primary/10 group relative overflow-hidden">
+                        <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center font-black text-white mb-8 text-xl shadow-lg">03</div>
+                        <h4 class="text-2xl font-black mb-4 uppercase italic leading-tight text-primary">ИИ ведет диалог</h4>
+                        <p class="text-gray-500 dark:text-zinc-300 leading-relaxed font-medium">
+                            Когда клиент напишет, ИИ сам выявит потребность и возьмет контакты, полностью отсеивая спам.<br>
+                        </p>
+                        <div class="absolute top-4 right-8 text-primary opacity-20 text-4xl">🧠</div>
+                    </div>
+                </div>
+
+                <!-- Второй этаж: Результат -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    <!-- Шаг 4 -->
+                    <div class="bg-white dark:bg-[#1a1a1a] p-10 rounded-[2.5rem] border dark:border-white/5 shadow-xl hover:border-primary/40 transition-all group">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center font-black text-primary mb-8 text-xl group-hover:bg-primary group-hover:text-white transition-all">04</div>
+                        <h4 class="text-2xl font-black mb-4 uppercase italic leading-tight">Заявки в одном месте</h4>
+                        <p class="text-gray-500 dark:text-zinc-400 leading-relaxed font-medium">
+                            Горячий лид попадает в CRM, где видны контакты и полная сводка диалога, чтобы с ним связался ваш менеджер и сразу продал<br>
+                        </p>
+                    </div>
+
+                    <!-- Шаг 5 -->
+                    <div class="bg-white dark:bg-[#1a1a1a] p-10 rounded-[2.5rem] border dark:border-white/5 shadow-xl hover:border-primary/40 transition-all group">
+                        <div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center font-black text-primary mb-8 text-xl group-hover:bg-primary group-hover:text-white transition-all">05</div>
+                        <h4 class="text-2xl font-black mb-4 uppercase italic leading-tight">Результат</h4>
+                        <p class="text-gray-500 dark:text-zinc-400 leading-relaxed font-medium">
+                            У вас есть ИИ-система для работы с заявками, увеличивающая ваши продажи на 30% и больше<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
