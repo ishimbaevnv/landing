@@ -47,11 +47,12 @@
             
             <!-- Переключатели блоков (номера) -->
             <nav class="flex items-center gap-2 md:gap-4">
-                <button onclick="showBlock(1)" id="btn-1" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">1</button>
+                <button onclick="showBlock(1)" id="btn-1" class="nav-btn active w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">1</button>
                 <button onclick="showBlock(2)" id="btn-2" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">2</button>
                 <button onclick="showBlock(3)" id="btn-3" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">3</button>
                 <button onclick="showBlock(4)" id="btn-4" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">4</button>
-                <button onclick="showBlock(5)" id="btn-5" class="nav-btn active w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">5</button>
+                <button onclick="showBlock(5)" id="btn-5" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">5</button>
+                <button onclick="showBlock(6)" id="btn-6" class="nav-btn w-10 h-10 md:w-12 md:h-12 border-2 border-gray-200 dark:border-white/10 rounded-xl font-bold flex items-center justify-center hover:border-primary transition-all">6</button>
             </nav>
 
             <div class="hidden sm:flex items-center gap-4">
@@ -324,6 +325,105 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="block-6" class="block-content active pt-12 pb-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter font-heading">Экосистема <span class="text-primary italic">Vanyoo</span></h2>
+                    <p class="text-lg text-gray-500 dark:text-gray-400 font-medium">Полный арсенал инструментов для цифровых продаж</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                    
+                    <!-- 1. ИИ в МАКС -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🔮</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">ИИ-продавец в МАКС</h4>
+                    </div>
+
+                    <!-- 2. ИИ в Телеграм -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">✈️</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">ИИ в Telegram</h4>
+                    </div>
+
+                    <!-- 3. ИИ во Вконтакте -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🟦</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">ИИ во Вконтакте</h4>
+                    </div>
+
+                    <!-- 4. ИИ на сайте (АКЦЕНТ) -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🌐</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">ИИ на сайте</h4>
+                    </div>
+
+                    <!-- 5. Алгоритмичный бот -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🤖</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Чат-бот</h4>
+                    </div>
+
+                    <!-- 6. Попап захвата -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🧲</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Попап захвата</h4>
+                    </div>
+
+                    <!-- 7. Конструктор мини-сайтов -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🔗</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Мини-сайты</h4>
+                    </div>
+
+                    <!-- 8. Генератор QR -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🏁</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">QR-коды</h4>
+                    </div>
+
+                    <!-- 9. Кнопка на сайт -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🔘</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Кнопка связи</h4>
+                    </div>
+
+                    <!-- 10. CRM система -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0 text-primary">📋</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">CRM-система</h4>
+                    </div>
+
+                    <!-- 11. Чат с клиентом -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">💬</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Живой чат</h4>
+                    </div>
+
+                    <!-- 12. Автосозвон -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">📞</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Авто-звонок</h4>
+                    </div>
+
+                    <!-- 13. Голосовой робот -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">🎙️</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Голосовой робот</h4>
+                    </div>
+
+                    <!-- 14. Рассылка по базе -->
+                    <div class="product-card bg-white dark:bg-[#1a1a1a] p-5 rounded-2xl border dark:border-white/5 flex items-center gap-4 group cursor-default">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg shrink-0">✉️</div>
+                        <h4 class="text-[13px] font-bold uppercase tracking-tight leading-tight font-heading">Рассылки</h4>
+                    </div>
+
+                </div>
+
+                
             </div>
         </section>
 
